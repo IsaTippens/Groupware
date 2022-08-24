@@ -8,6 +8,7 @@ class Screen(ScreenInterface):
         self.previous_screen: Screen = None
         self.next: Screen = None
         self.pop = False
+        self.goToRoot = False
 
     @abstractmethod
     def start(self):
@@ -21,3 +22,7 @@ class Screen(ScreenInterface):
     @abstractmethod
     def goBack(self):
         self.pop = True
+    
+    @abstractmethod
+    def navigateToRoot(self):
+        self.goToRoot = True

@@ -20,5 +20,10 @@ class ScreenManager():
             if current.next is not None:
                 self.addScreen(current.next)
                 continue
+
+            if current.goToRoot == True:
+                self.screens = [self.screens[0]]
+                continue
+
             self.screens.pop()
         print("Exiting")
