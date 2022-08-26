@@ -1,4 +1,4 @@
-from core.models.movie import Movie
+from core.models import Movie
 
 class Booking:
     def __init__(self):
