@@ -11,14 +11,15 @@ class MovieRepository(Repository):
     def _init(self):
         with open(self.moviesFile, 'r') as f:
             data = load_json(f)
-            self.movies = data['movies']
+            for movie in data['movies']:
+                self.movies.append(Movie(movie['name'], movie['description'], movie['type']))
         
-    def get_all(self):
+    def get_all(self) -> list[Movie]:
         return self.movies
 
-    def get(self,name: str):
+    def get(self,name: str) -> Movie:
         for movie in self.movies:
-            if movie['name'] == name:
+            if movie.name == name:
                 return movie
         return None
 
@@ -27,21 +28,28 @@ class MovieRepository(Repository):
         self._save_movies()
     
     def _save_movies(self):
-        movie_dict = {'movies': self.movies}
+        result = []
+        for movie in self.movies:
+            result.append({
+                'name': movie.name,
+                'type': movie.type,
+                'description': movie.description
+            })
+        movie_dict = {'movies': result}
         save_json(self.moviesFile, movie_dict)
     
     def update(self, value: Movie):
         for movie in self.movies:
-            if movie['name'] == value['name']:
-                movie['name'] = value['name']
-                movie['description'] = value['description']
-                movie['type'] = value['type']
+            if movie.name == value.name:
+                movie.name = value.name
+                movie.description = value.description
+                movie.type = value.type
                 self._save_movies()
                 return 
     
     def delete(self, value: Movie):
         for i in range(len(self.movies)):
-            if self.movies[i]['name'] == value['name']:
+            if self.movies[i].name == value.name:
                 del self.movies[i]
                 self._save_movies()
                 return

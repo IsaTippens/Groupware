@@ -1,4 +1,5 @@
 from core.repositories import MovieRepository
+from core.models import Movie
 
 
 class TestMovieRepository(MovieRepository):
@@ -8,16 +9,8 @@ class TestMovieRepository(MovieRepository):
 
     def _init(self):
         self.movies = [
-            {
-                'name': 'Avengers 5',
-                'type': 1,
-                'description': 'Thanos returns',
-            },
-            {
-                'name': 'Avengers 4',
-                'type': 1,
-                'description': 'Thor returns',
-            }]
+            Movie('Avengers 5', 'Thanos returns'),
+            Movie('Avengers 4','Thor returns')]
 
     def _save_movies(self):
         pass
