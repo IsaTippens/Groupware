@@ -1,4 +1,9 @@
 class Repository:
+    """
+        Repositories handle the data layer of the application
+        This is where data will be stored and retrieved.
+        This pattern allows us to fetch data from local storage, network or even hardcoded with our python expertise.
+    """
     def __init__(self):
         pass
 
