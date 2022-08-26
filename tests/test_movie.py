@@ -1,4 +1,4 @@
-from core.models.movie import Movie
+from core.models import Movie
 
 def test_movie_id():
     movie = Movie(0, "Pacman")
