@@ -2,7 +2,7 @@ class Service():
     def __init__(self):
         pass
     
-    def getAll(self):
+    def get_all(self):
         pass
 
     def get(self,name: str):
