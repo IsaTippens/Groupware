@@ -1,7 +1,6 @@
-from core.enums import MovieType
 class Movie:
 
-    def __init__(self, id: int, name: str, movieType : MovieType = MovieType.BASIC2D):
+    def __init__(self, id: int, name: str, movieType : int):
         self.id = id
         self.name = name
         self.type = movieType

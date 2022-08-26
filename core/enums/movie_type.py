@@ -5,4 +5,3 @@ class MovieType(Enum):
     BASIC3D = 2
     IMAX2D = 3
     IMAX3D = 4
-
