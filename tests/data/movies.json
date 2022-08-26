@@ -1,0 +1,14 @@
+{
+    "movies": [
+        {
+            "name": "Avengers 5",
+            "description": "Thanos returns",
+            "types": 4
+        },
+        {
+            "name": "Avengers 4",
+            "description": "Thor returns",
+            "types": 3
+        }
+    ]
+}
