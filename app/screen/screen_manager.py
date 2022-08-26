@@ -9,6 +9,21 @@ class ScreenManager():
         pass
 
     def start(self):
+        """
+            Magic starts here
+
+            We start with the first screen in the stack, if any
+
+            Once a screen's start function ends, we arrive back here.
+            We check for any properties that have been set by the screen and act accordingly
+
+            If there is a new screen in the next attribute, add it to the screens stack and start it
+
+            If the current screen requests to go to the root screen, we set the screens stack to just the first screen
+
+            Otherwise pop the current screen and loop again
+        
+        """
         while len(self.screens) > 0:
             current = self.screens[-1]
             current.next = None
