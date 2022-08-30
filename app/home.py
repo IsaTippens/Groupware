@@ -7,8 +7,10 @@ class Home(TitledScreen):
         super().__init__("Home")
     def start(self):
         super().start()
-        print("Enter 1 to navigate to the next screen")
-        print("Enter 2 to navigate to the movie screen")
+        print("Enter a number to select a screen")
+        print("1\tMovies")
+        print("2\tExit")
+
         num = input("Enter a number: ")
         if num == "1":
             return self.navigate(Test())
