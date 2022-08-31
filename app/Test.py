@@ -1,4 +1,5 @@
 from app.screen.titled_screen import TitledScreen
+from app.globals import State
 
 class Test(TitledScreen):
     """
@@ -16,9 +17,10 @@ class Test(TitledScreen):
         super().start()
         print("This is the test screen")
         print("Enter 1 to go back")
-        print("Enter 2 to navigate to the next screen")
+        print("Enter 2 to modify the state")
         num = input("Enter a number: ")
         if num == "1":
             return self.goBack()
         elif num == "2":
-            return self.navigate(Test())
+            State["test"] = input("Enter something: ")
+            return self.goBack()
