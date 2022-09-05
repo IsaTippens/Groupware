@@ -2,11 +2,8 @@ from core.viewmodels import Movie
 
 class Booking:
     def __init__(self):
+        self.id = 0
         self.seats = []
         self.movie = None
         self.time = ""
-    
-    def create(self, movie: Movie, seats: list[str], time: str):
-        self.seats = seats
-        self.movie = movie
-        self.time = time
+        self.owner = ""
