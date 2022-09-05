@@ -1,5 +1,3 @@
-from core.enums import MovieType
-from core.viewmodels import Movie
 from core.services.booking_service import BookingService
 from core.repositories.test_booking_repository import TestBookingRepository
 
