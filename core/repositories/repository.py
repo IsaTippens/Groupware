@@ -21,3 +21,6 @@ class Repository:
 
     def delete(self,value):
         pass
+
+    def _save(self):
+        pass

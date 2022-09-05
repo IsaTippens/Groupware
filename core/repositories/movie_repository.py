@@ -25,9 +25,9 @@ class MovieRepository(Repository):
 
     def add(self,value: Movie):
         self.movies.append(value)
-        self._save_movies()
+        self._save()
     
-    def _save_movies(self):
+    def _save(self):
         result = []
         for movie in self.movies:
             result.append({
@@ -44,12 +44,12 @@ class MovieRepository(Repository):
                 movie.name = value.name
                 movie.description = value.description
                 movie.type = value.type
-                self._save_movies()
+                self._save()
                 return 
     
     def delete(self, value: Movie):
         for i in range(len(self.movies)):
             if self.movies[i].name == value.name:
                 del self.movies[i]
-                self._save_movies()
+                self._save()
                 return
