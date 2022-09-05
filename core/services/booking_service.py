@@ -3,7 +3,7 @@ from core.models import Booking
 from core.viewmodels import Booking as BookingView
 from core.repositories import BookingRepository
 
-class MovieService(Service):
+class BookingService(Service):
     def __init__(self, repository: BookingRepository):
         self.repository = repository
         pass
@@ -46,7 +46,7 @@ class MovieService(Service):
         self.repository.update(booking)
         pass
 
-    def delete(self, value: MovieView):
+    def delete(self, value: BookingView):
         booking = self._to_model(value)
         self.repository.delete(booking)
         pass
