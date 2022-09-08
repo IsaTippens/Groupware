@@ -1,6 +1,4 @@
 from core.repositories import TheatreRepository
-from core.models import Booking
-
 
 class TestTheatreRepository(TheatreRepository):
     def __init__(self):
