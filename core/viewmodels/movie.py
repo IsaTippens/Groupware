@@ -8,4 +8,4 @@ class Movie:
         pass
 
     def __str__(self):
-        return f'{self.id} {self.name} {self.description} {self.type}'
+        return f'{self.name} {self.description} {self.type}'

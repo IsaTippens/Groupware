@@ -4,4 +4,8 @@ class Ticket:
         self.seats = []
         self.movie = None
         self.time = ""
+        self.date = ""
         self.owner = ""
+    
+    def __str__(self):
+        return f"Ticket {self.id} for {self.movie} at {self.time} for {self.owner} with {self.seats}"
