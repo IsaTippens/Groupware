@@ -10,8 +10,6 @@ class Payment(TitledScreen):
 
     def start(self):
         super().start()
-        print("The state is: ", State.get("test", "Empty"))
-        print()
         print("Select payment type: ")
         print("1\t Visa")
         print("2\t Mastercard")
