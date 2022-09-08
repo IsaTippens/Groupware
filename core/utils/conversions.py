@@ -2,7 +2,7 @@ from core.models import Movie, Booking, Theatre
 from core.viewmodels import Movie as MovieView, Ticket as TicketView, Theatre as TheatreView
 
 def movie_view_to_model(movie: MovieView) -> Movie:
-    return Movie(movie.name, movie.description, movie.type.value)
+    return Movie(movie.name, movie.description, movie.type)
 
 def movie_model_to_view(movie: Movie) -> MovieView:
     return MovieView(movie.name, movie.description, movie.type)
