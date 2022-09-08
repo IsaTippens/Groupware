@@ -9,6 +9,7 @@ def movie_model_to_view(movie: Movie) -> MovieView:
 
 def booking_view_to_model(ticket: TicketView) -> Booking:
     booking = Booking()
+    booking.id = ticket.id
     booking.movie = ticket.movie
     booking.date = ticket.date
     booking.time = ticket.time
@@ -19,6 +20,7 @@ def booking_view_to_model(ticket: TicketView) -> Booking:
 
 def booking_model_to_view(booking: Booking) -> TicketView:
     ticket = TicketView()
+    ticket.id = booking.id
     ticket.movie = booking.movie
     ticket.date = booking.date
     ticket.time = booking.time
