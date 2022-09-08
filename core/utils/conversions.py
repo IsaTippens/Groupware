@@ -1,5 +1,5 @@
 from core.models import Movie, Booking, Theatre
-from core.viewmodels import Movie as MovieView, Ticket as TicketView
+from core.viewmodels import Movie as MovieView, Ticket as TicketView, Theatre as TheatreView
 
 def movie_view_to_model(movie: MovieView) -> Movie:
     return Movie(movie.name, movie.description, movie.type.value)
@@ -26,3 +26,14 @@ def booking_model_to_view(booking: Booking) -> TicketView:
     ticket.owner = booking.owner
     ticket.seats = booking.seats
     return ticket
+
+def theatre_view_to_model(theatre: TheatreView) -> Theatre:
+    t = Theatre(theatre.movie, theatre.date, theatre.time)
+    t.seats = theatre.seats
+    return t
+
+def theatre_model_to_view(theatre: Theatre) -> TheatreView:
+    t = TheatreView(theatre.movie, theatre.date, theatre.time)
+    t.seats = theatre.seats
+    return t
+
