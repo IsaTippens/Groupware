@@ -36,7 +36,7 @@ class TheatreUtils():
         return row, int(col)
 
     @staticmethod
-    def letter_to_index(row_letter):
+    def letter_to_index(row_letter: str):
         """
             Converts a row letter to a row index.
             A => 0
@@ -47,11 +47,11 @@ class TheatreUtils():
         """
         row_index = 0
         for i in range(len(row_letter)):
-            row_index += (ord(row_letter[i]) - 65) * (26 ** (len(row_letter) - i - 1))
-        return row_index
+            row_index += (ord(row_letter[i]) - 64) * 26 ** (len(row_letter) - i - 1)
+        return row_index - 1
     
     @staticmethod
-    def index_to_letter(row_index):
+    def index_to_letter(row_index: int):
         """
             Converts a row index to a row letter.
             0 => A
