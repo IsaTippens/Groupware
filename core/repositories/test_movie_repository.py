@@ -14,3 +14,5 @@ class TestMovieRepository(MovieRepository):
 
     def _save(self):
         pass
+    
+TestMovieRepository.__test__ = False

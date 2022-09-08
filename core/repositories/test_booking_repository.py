@@ -34,3 +34,5 @@ class TestBookingRepository(BookingRepository):
 
     def _save(self):
         pass
+    
+TestBookingRepository.__test__ = False
