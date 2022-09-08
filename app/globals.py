@@ -1,6 +1,7 @@
 from typing import Any
-from core.repositories import MovieRepository as MR
-from core.services import MovieService as MS
+from core.repositories import MovieRepository as MR, BookingRepository as BR, TheatreRepository as TR
+from core.services import MovieService as MS, BookingService as BS, TheatreService as TS
+
 
 from core.viewmodels import Movie, Ticket
 
@@ -14,6 +15,12 @@ from core.viewmodels import Movie, Ticket
 """
 MovieRepository = MR("data/movies.json")
 MovieService = MS(MovieRepository)
+
+BookingRepository = BR("data/bookings.json")
+BookingService = BS(BookingRepository)
+
+TheatreRepository = TR("data/theatres.json")
+TheatreService = TS(TheatreRepository)
 
 State = dict[str, Any]()
 State["MOVIE"] = Movie()
