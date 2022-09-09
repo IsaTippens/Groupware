@@ -54,7 +54,7 @@ class Payment(TitledScreen):
                 print()
                 print("The payment has been successful ")
             else:
-                print("The bank you selected does not exist. Payment Failed. Try again")
+                print("The bank you selected does not exist. Payment Failed. Try again. ")
                 #super().start()   
                 
 
