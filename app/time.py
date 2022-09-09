@@ -14,19 +14,20 @@ class Times(TitledScreen):
         print("Select a time:")
         print("1\t2pm")
         print("2\t5pm")
-        print("3\t8pm")
+        print("3\t7pm")
+        print("4\tCancel")
         print()
 
         num = input("Enter a number: ")
         if num == "1":
-            State["time"] = "2pm"
+            State["TICKET"].time = "2PM"
         if num == "2":
-            State["time"] = "5pm"
+            State["TICKET"].time = "5PM"
         if num == "3":
-            State["time"] = "8pm"
+            State["TICKET"].time = "7PM"
         if num == "4":
             return self.goBack()
-        return self.navigate(Test())
+        return self.navigate(Test()) #should go to seating selection
 
        
 
