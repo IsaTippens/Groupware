@@ -1,5 +1,4 @@
 from app.screen.titled_screen import TitledScreen
-from app.Test import Test
 from app.globals import MovieService
 from app.globals import State
 from app.time import Times 
