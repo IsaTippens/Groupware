@@ -2,6 +2,7 @@ from app.screen.titled_screen import TitledScreen
 from app.Test import Test
 from app.globals import MovieService
 from app.globals import State
+from app.time import Times 
 class MovieScreen(TitledScreen):
     def __init__(self):
         super().__init__("Movies")
@@ -19,3 +20,7 @@ class MovieScreen(TitledScreen):
         Selection = MovieService.get_all()[num-1].name
         State["MOVIE"] = Selection
         State["TICKET"].movie = Selection
+        if num==0: 
+            return self.goBack()
+        else:
+            return self.navigate(Times())
