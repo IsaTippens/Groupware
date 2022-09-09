@@ -20,11 +20,11 @@ class Times(TitledScreen):
 
         num = input("Enter a number: ")
         if num == "1":
-            State["TICKET"].time = "2pm"
+            State["TICKET"].time = "2PM"
         if num == "2":
-            State["TICKET"].time = "5pm"
+            State["TICKET"].time = "5PM"
         if num == "3":
-            State["TICKET"].time = "7pm"
+            State["TICKET"].time = "7PM"
         if num == "4":
             return self.goBack()
         return self.navigate(Test()) #should go to seating selection
