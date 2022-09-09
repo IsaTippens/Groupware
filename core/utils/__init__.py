@@ -1,2 +1,3 @@
 from core.utils.util import *
-__all__ = ['load_json', 'save_json']
+from core.utils.theatre_utils import TheatreUtils
+__all__ = ['load_json', 'save_json', 'TheatreUtils']

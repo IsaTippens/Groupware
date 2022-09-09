@@ -28,6 +28,19 @@ class MovieService(Service):
         movieDescription = movie.description
         return MovieView(movieName, movieDescription, movieType)
 
+    def get_price(self, movie: MovieView):
+        if movie.type == MovieType.BASIC2D:
+            return 100
+        elif movie.type == MovieType.BASIC3D:
+            return 150
+        elif movie.type == MovieType.IMAX2D:
+            return 150
+        elif movie.type == MovieType.IMAX3D:
+            return 250
+        return 0
+
+
+
     def add(self,value: MovieView):
         movie = Movie(value.name, value.description, value.type.value)
         self.repository.add(movie)

@@ -1,4 +1,5 @@
 from core.viewmodels.movie import Movie
-from core.viewmodels.booking import Booking
+from core.viewmodels.ticket import Ticket
+from core.viewmodels.theatre import Theatre
 
-__all__ = ['Movie', 'Booking']
+__all__ = ['Movie', 'Ticket', 'Theatre']

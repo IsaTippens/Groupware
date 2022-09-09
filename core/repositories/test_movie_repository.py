@@ -12,5 +12,7 @@ class TestMovieRepository(MovieRepository):
             Movie('Avengers 5', 'Thanos returns'),
             Movie('Avengers 4','Thor returns')]
 
-    def _save_movies(self):
+    def _save(self):
         pass
+    
+TestMovieRepository.__test__ = False
