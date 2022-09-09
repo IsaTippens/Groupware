@@ -9,15 +9,19 @@ class Home(TitledScreen):
         super().__init__("Home")
     def start(self):
         super().start()
-        print("The state is: ", State.get("test", "Empty"))
-        print()
-        print("Enter a number to select a screen")
+        
+        print("Welcome to GO MOVIES.")
+        print("Where you find Entertainment4Everyone")
+        print("Enter a number to select a option number:")
         print("1\tMovies")
-        print("2\tTest state stuff")
+        print("2\tTicket Query")
+        print("3\tStaff Page")
 
         num = input("Enter a number: ")
         if num == "1":
             return self.navigate(MovieScreen())
         if num == "2":
-            return self.navigate(Test())
+            return self.navigate()
+        if num == "3":
+            return self.navigate()
 
