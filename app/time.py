@@ -1,6 +1,6 @@
 from app.screen.titled_screen import TitledScreen
 from app.Test import Test
-from app.movies import MovieScreen
+from datetime import date 
 
 from app.globals import State
 
@@ -18,6 +18,7 @@ class Times(TitledScreen):
         print("4\tCancel")
         print()
 
+        State["TICKET"].date = str(date.today())
         num = input("Enter a number: ")
         if num == "1":
             State["TICKET"].time = "2PM"
