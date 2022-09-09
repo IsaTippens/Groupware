@@ -1,6 +1,7 @@
 from app.screen.titled_screen import TitledScreen
 from app.Test import Test
 from app.movies import MovieScreen
+from app.time import Times
 
 from app.globals import State
 
@@ -21,7 +22,5 @@ class Home(TitledScreen):
         if num == "1":
             return self.navigate(MovieScreen())
         if num == "2":
-            return self.navigate()
-        if num == "3":
-            return self.navigate()
+            return self.navigate(Times())
 
