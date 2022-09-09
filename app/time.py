@@ -9,8 +9,6 @@ class Times(TitledScreen):
         super().__init__("Times")
     def start(self):
         super().start()
-        print("The state is: ", State.get("test", "Empty"))
-        print()
         print("Select a time:")
         print("1\t2pm")
         print("2\t5pm")
