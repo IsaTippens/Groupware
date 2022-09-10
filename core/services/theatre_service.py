@@ -15,7 +15,7 @@ class TheatreService(Service):
     def get(self, movie: MovieView, date: str, time: str) -> TheatreView:
         theatre = self.repository.get(movie.name, date, time)
         if theatre.seats is None:
-            theatre.seats = self.generate_seats_for_movie(conversions.movie_view_to_model(movie))
+            theatre.seats = self.generate_seats_for_movie(movie)
         return conversions.theatre_model_to_view(theatre)
 
     def add(self, theatre: Theatre):
