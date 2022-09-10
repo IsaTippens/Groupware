@@ -54,7 +54,7 @@ class TheatreRepository(Repository):
         self._save()
     
     def _save(self):
-        save_json(self.theatresFile, self.theatres)
+        save_json(self.theatreFile, self.theatres)
     
     def update(self, value: Theatre):
         if self.get(value.movie, value.date, value.time).seats is None:
