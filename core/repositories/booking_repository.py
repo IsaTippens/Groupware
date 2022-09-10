@@ -68,17 +68,18 @@ class BookingRepository(Repository):
         self._save()
     
     def _convert_from_json(self, booking: dict):
-        movie = Movie()
+        movie = Movie("", "", 1)
         movie.name = booking["movie"]
+
         movie.type = booking["movietype"]
-        booking = Booking()
-        booking.id = booking["id"]
-        booking.movie = movie
-        booking.date = booking["date"]
-        booking.time = booking["time"]
-        booking.owner = booking["owner"]
-        booking.seats = booking["seats"]
-        return booking
+        result = Booking()
+        result.id = booking["id"]
+        result.movie = movie
+        result.date = booking["date"]
+        result.time = booking["time"]
+        result.owner = booking["owner"]
+        result.seats = booking["seats"]
+        return result
 
     def _convert_to_json(self, booking: Booking):
         return {
