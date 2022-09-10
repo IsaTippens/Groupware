@@ -1,5 +1,6 @@
 
 from core.viewmodels import Movie
+from collections import Counter
 
 
 class Ticket:
@@ -13,4 +14,15 @@ class Ticket:
         self.owner: str = ""
     
     def __str__(self):
-        return f"Ticket {self.id} for {self.movie} at {self.time} for {self.owner} with {self.seats}"
+        seats = ""
+        for idx, seat in enumerate(self.seats):
+            seats += seat
+            if idx < len(self.seats) - 1:
+                seats += ", "
+        snacks = "\nSnacks:"
+        counter = Counter(self.snacks)
+        snack_k = list(counter.keys())
+        for key in snack_k:
+            amount = counter[key]
+            snacks += f"\n{amount}x {key}"
+        return f"\n-----\nTicket #{self.id} for {self.movie.name} on {self.date} at {self.time}.\nSitting in {seats}.\nCustomer: {self.owner}{snacks}\n-----\n"
