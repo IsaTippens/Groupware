@@ -30,7 +30,8 @@ class ScreenManager():
             current.start()
             
             if current.pop:
-                current.previous_screen.next = None
+                if (current.previous_screen != None):
+                    current.previous_screen.next = None
 
             if current.next is not None:
                 self.addScreen(current.next)
