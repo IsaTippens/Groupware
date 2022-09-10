@@ -1,6 +1,6 @@
 from core.services.booking_service import BookingService
 from core.repositories.test_booking_repository import TestBookingRepository
-from core.viewmodels import Ticket
+from core.viewmodels import Ticket, Movie
 
 bookService = BookingService(TestBookingRepository())
 
@@ -26,8 +26,9 @@ def test_update():
     assert updatedTicket.seats == ["C1", "C2"] and currentTicket.seats == ["A1", "A2"]
 
 def test_register():
+    movie = Movie("Avengers 5", "")
     ticket = Ticket()
-    ticket.movie = "Avengers 5"
+    ticket.movie = movie
     ticket.seats = ["A1", "A2"]
     ticket.time = "2PM"
     ticket.owner = "Steve"
