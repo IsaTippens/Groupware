@@ -16,6 +16,7 @@ def booking_view_to_model(ticket: TicketView) -> Booking:
     booking.date = ticket.date
     booking.owner = ticket.owner
     booking.seats = ticket.seats
+    booking.snacks = ticket.snacks
     return booking
 
 def booking_model_to_view(booking: Booking) -> TicketView:
@@ -27,6 +28,7 @@ def booking_model_to_view(booking: Booking) -> TicketView:
     ticket.date = booking.date
     ticket.owner = booking.owner
     ticket.seats = booking.seats
+    ticket.snacks = booking.snacks
     return ticket
 
 def theatre_view_to_model(theatre: TheatreView) -> Theatre:

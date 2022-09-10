@@ -7,6 +7,7 @@ class Ticket:
         self.id:int = 0
         self.seats: list[str] = []
         self.movie: Movie = None
+        self.snacks: list[str] = []
         self.time: str = ""
         self.date: str = ""
         self.owner: str = ""
