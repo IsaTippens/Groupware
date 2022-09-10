@@ -84,7 +84,7 @@ class TicketManagementScreen(TitledScreen):
                 continue
             
             if not self.check_if_seats_available(ticket, ticket.date, time):
-                print("Seats on ticket are unavailable in at the time selected")
+                print("Seats displayed on the ticket are unavailable for the time selected")
                 continue
             
             confirm = input(f"Are you sure you want to change from {ticket.time} to {time} (Enter \"yes\" to confirm): ")
@@ -104,10 +104,11 @@ class TicketManagementScreen(TitledScreen):
     def start(self):
         super().start()
         ticket, exit = self.fetch_ticket()
-        print("Ticket details:", ticket)
+        
         if exit:
             return self.goBack()
         while True:
+            print("Ticket details:", ticket)
             print("Select an option")
             for idx, option in enumerate(self.option_names):
                 print(f"{idx + 1}: {option}")
