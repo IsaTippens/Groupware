@@ -25,3 +25,4 @@ TheatreService = TS(TheatreRepository)
 State = dict[str, Any]()
 State["MOVIE"] = Movie()
 State["TICKET"] = Ticket()
+State["SECRET"] = "@BC321"
