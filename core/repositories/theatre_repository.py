@@ -46,11 +46,17 @@ class TheatreRepository(Repository):
         return theatre
 
     def add(self, value: Theatre):
-        self.theatres[value.movie] = {
-            value.date: {
-                value.time: value.seats
-            }
-        }
+        movie = self.theatres.get(value.movie, None)
+        if movie is None:
+            movie = {}
+        
+        date = movie.get(value.date, None)
+        if date is None:
+            date = {}
+            movie[value.date] = date
+
+        movie[value.date][value.time] = value.seats
+        self.theatres[value.movie] = movie
         self._save()
     
     def _save(self):
