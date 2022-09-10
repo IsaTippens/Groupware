@@ -29,8 +29,6 @@ class TheatreUtils():
 
             E.g A1 is the first seat in the row A.
         """
-        if not TheatreUtils.valid_seat(seat):
-            return None
         row = seat[0]
         col = seat[1:]
         return row, int(col)
