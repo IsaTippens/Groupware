@@ -1,5 +1,5 @@
 from core.repositories import BookingRepository
-from core.models import Booking
+from core.models import Booking, Movie
 
 
 class TestBookingRepository(BookingRepository):
@@ -8,19 +8,21 @@ class TestBookingRepository(BookingRepository):
         self._init()
 
     def faker(self):
+        aMovie = Movie("Avengers 5", "")
         result = {}
         a = Booking()
         a.id = 1
-        a.movie = "Avengers 5"
+        a.movie = aMovie
         a.seats = ["A1", "A2"]
         a.time = "2PM"
         a.owner = "Steve"
         a.date = "2022-04-01"
         result[a.id] = a
 
+        bMovie = Movie("Avengers 4", "")
         a = Booking()
         a.id = 2
-        a.movie = "Avengers 4"
+        a.movie = bMovie
         a.seats = ["A1", "A2"]
         a.time = "2PM"
         a.owner = "Rogers"
