@@ -44,7 +44,7 @@ class TheatreService(Service):
         theatre = self.get(movie, ticket.date, ticket.time)
         for seat in ticket.seats:
             row, col = TheatreUtils.split_seat(seat)
-            row_index = TheatreUtils.letter_to_index(row) - 1
+            row_index = TheatreUtils.letter_to_index(row)
             col_index = col - 1
             theatre.seats[row_index][col_index] = False
         self.update(theatre)
