@@ -79,6 +79,7 @@ class BookingRepository(Repository):
         result.time = booking["time"]
         result.owner = booking["owner"]
         result.seats = booking["seats"]
+        result.snacks = booking["snacks"]
         return result
 
     def _convert_to_json(self, booking: Booking):
@@ -89,5 +90,6 @@ class BookingRepository(Repository):
             "date": booking.date,
             "time": booking.time,
             "owner": booking.owner,
-            "seats": booking.seats
+            "seats": booking.seats,
+            "snacks": booking.snacks
         }
