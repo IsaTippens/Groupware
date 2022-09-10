@@ -1,11 +1,12 @@
 from core.models import Movie, Booking, Theatre
 from core.viewmodels import Movie as MovieView, Ticket as TicketView, Theatre as TheatreView
+from core.enums import MovieType
 
 def movie_view_to_model(movie: MovieView) -> Movie:
     return Movie(movie.name, movie.description, movie.type.value)
 
 def movie_model_to_view(movie: Movie) -> MovieView:
-    return MovieView(movie.name, movie.description, movie.type)
+    return MovieView(movie.name, movie.description, MovieType(movie.type))
 
 def booking_view_to_model(ticket: TicketView) -> Booking:
     booking = Booking()
