@@ -8,8 +8,8 @@ from core.utils import TheatreUtils
 class TicketManagementScreen(TitledScreen):
     def __init__(self):
         super().__init__("Ticket", "Management")
-        self.options = [self.change_owner, self.change_time, self.change_date]
-        self.option_names = ["Change owner", "Select new time", "Pick new date"]
+        self.options = [self.change_owner, self.change_time]
+        self.option_names = ["Change owner", "Select new time"]
 
     def fetch_ticket(self) -> Tuple(Ticket, bool):
         ticket = None
@@ -96,10 +96,6 @@ class TicketManagementScreen(TitledScreen):
         ticket.time = time
         self.register_ticket(ticket)
         print(ticket)
-        
-
-    def change_date(self, ticket):
-        pass
 
     def start(self):
         super().start()
