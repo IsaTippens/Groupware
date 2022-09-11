@@ -28,12 +28,11 @@ class TicketQueryScreen(TitledScreen):
         print('Here is ticket #' + str(ticketID_no) + ' :' )
 
         def TicketQuery(ticketID_no):
-            print('hi')
+            print(ticket_info)
 
         def TicketCancellation(ticketID_no):
-            for idx, obj in enumerate(my_list):
-                if obj['id'] == ticketID_no:
-                    my_list.pop(idx)
+            BookingService.deregister_ticket(ticket_info)
+            TheatreService.deregister_ticket(ticket_info)
 
         def Ticket_GoBack():
             return self.navigate(Test())
@@ -58,14 +57,3 @@ class TicketQueryScreen(TitledScreen):
 
 
         return self.navigate(Test())
-
-
-
-
-
-
-
-
-
-
-
