@@ -1,8 +1,7 @@
 from app.screen.titled_screen import TitledScreen
 from app.movies import MovieScreen
 from app.staff import StaffScreen
-
-from app.globals import State
+from app.ticket_query import TicketQueryScreen
 
 class Home(TitledScreen):
     def __init__(self):
@@ -23,7 +22,7 @@ class Home(TitledScreen):
             if num == "1":
                 return self.navigate(MovieScreen())
             if num == "2":
-                self.goBack()
+                return self.navigate(TicketQueryScreen())
             if num == "3":
                 return self.navigate(StaffScreen())
             if num == "exit":

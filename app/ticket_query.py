@@ -24,22 +24,24 @@ class TicketQueryScreen(TitledScreen):
         print('Enter your ticket ID or 99 to return to previous page')
         ticketID_no = int(input())
         ticket_info = BookingService.get(ticketID_no)
-        print('Your ticket details will be displayed below:')
-        print('Here is ticket #' + str(ticketID_no) + ' :' )
+        
 
-        def TicketQuery(ticketID_no):
+        def TicketQuery():
+            print('Your ticket details will be displayed below:')
+            print('Here is ticket #' + str(ticketID_no) + ' :' )
             print(ticket_info)
 
-        def TicketCancellation(ticketID_no):
+        def TicketCancellation():
             BookingService.deregister_ticket(ticket_info)
             TheatreService.deregister_ticket(ticket_info)
 
         def Ticket_GoBack():
-            return self.navigate(Test())
+            return self.navigateToRoot()
 
 
         if ticket_activity == 1:
-            return TicketQuery
+            TicketQuery()
+            return self.navigateToRoot()
 
         elif ticket_activity == 2:
             print('confirm ticket cancellation (yes/no)')
@@ -47,7 +49,8 @@ class TicketQueryScreen(TitledScreen):
             if answer == 'yes':
                 print('Ticket #' + str(ticketID_no) + ' has been cancelled')
                 print('Thank You.')
-                return TicketCancellation
+                TicketCancellation()
+                return Ticket_GoBack()
 
             elif answer == 'no':
                 return Ticket_GoBack()
@@ -56,4 +59,4 @@ class TicketQueryScreen(TitledScreen):
             return Ticket_GoBack()
 
 
-        return self.navigate(Test())
+        return self.navigateToRoot()
