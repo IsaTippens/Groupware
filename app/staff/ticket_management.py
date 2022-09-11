@@ -66,19 +66,19 @@ class TicketManagementScreen(TitledScreen):
             print(idx + 1, time)
 
         while True:
-            num = input("Select a time (Enter \"exit\" to cancel): ")
-            if num == "exit":
+            user_choice = input("Select a time (Enter \"exit\" to cancel): ")
+            if user_choice == "exit":
                 return
 
-            if not num.isdigit():
+            if not user_choice.isdigit():
                 print("Enter a valid number")
                 continue
 
-            num = int(num)
-            if num > len(times) or num <= 0:
+            user_choice = int(user_choice)
+            if user_choice > len(times) or user_choice <= 0:
                 print("Enter a valid option")
                 continue
-            time = times[num - 1]
+            time = times[user_choice - 1]
             if time == ticket.time:
                 print("Select a different time than displayed on the ticket")
                 continue
@@ -91,11 +91,10 @@ class TicketManagementScreen(TitledScreen):
             if confirm == "yes":
                 break
             
-        time = times[num - 1]
+        time = times[user_choice - 1]
         self.deregister_ticket(ticket)
         ticket.time = time
         self.register_ticket(ticket)
-        print(ticket)
 
     def start(self):
         super().start()
@@ -108,24 +107,24 @@ class TicketManagementScreen(TitledScreen):
             print("Select an option")
             for idx, option in enumerate(self.option_names):
                 print(f"{idx + 1}: {option}")
-            num = 0
+            user_choice = 0
             while True:
-                num = input("Enter a number (Enter 0 to exit): ")
-                if num == "exit":
+                user_choice = input("Enter a number (Enter 0 to exit): ")
+                if user_choice == "exit":
                         return
 
-                if not num.isdigit():
+                if not user_choice.isdigit():
                     print("Enter a valid number")
                     continue
 
-                num = int(num)
-                if num > len(self.options) or num < 0:
+                user_choice = int(user_choice)
+                if user_choice > len(self.options) or user_choice < 0:
                     print("Enter a valid option")
                     continue
                 break
-            if num == 0:
+            if user_choice == 0:
                 break
-            self.options[num-1](ticket)
+            self.options[user_choice-1](ticket)
                 
         return self.goBack()
 
