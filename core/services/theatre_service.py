@@ -76,7 +76,7 @@ class TheatreService(Service):
 
     def generate_seats(self, rows: int, cols: int) -> list[list[bool]]:
         seats: list[list[bool]] = []
-        for i in range(1, rows):
+        for i in range(0, rows):
             seats.append([False] * cols)
         return seats
 
