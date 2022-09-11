@@ -5,20 +5,6 @@ from app.Test import Test
 from core.viewmodels import Movie, Ticket
 from core.enums import MovieType
 
-"""
-DELETE
-"""
-mv = Movie("Avengers 5", "", MovieType.IMAX3D)
-t = Ticket()
-t.movie = mv
-t.time = "5PM"
-t.date = "2022-09-01"
-State['TICKET'] = t
-State['MOVIE'] = mv
-"""
-DELETE
-"""
-
 class SelectSeatsScreen(TitledScreen):
     def __init__(self):
         super().__init__('SelectSeats')
