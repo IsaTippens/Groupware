@@ -71,7 +71,7 @@ class TheatreSummary(TitledScreen):
             if user_input == 0:
                 break
             selected_time = times[user_input-1]
-            theatre = TheatreService.get(selected_movie, selected_time, dt)
+            theatre = TheatreService.get(selected_movie, dt, selected_time)
             print(f"Showing {selected_movie.name} at {selected_time} on {dt}")
             self.print_seats(theatre.seats)
             user_input = input("Would you like to view another theatre? (Enter \"Yes\" to continue): ")

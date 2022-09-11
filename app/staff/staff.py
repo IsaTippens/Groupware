@@ -1,4 +1,5 @@
 from app.screen.titled_screen import TitledScreen
+from app.staff.theatre_summary import TheatreSummary
 from app.staff.ticket_management import TicketManagementScreen
 from app.staff.ticket_sales import TicketSales
 
@@ -12,7 +13,7 @@ class StaffScreen(TitledScreen):
 		"Theatre Summary",
 		"Daily sales Summary"
 		]
-		self.screens = [TicketManagementScreen, None, TicketSales]
+		self.screens = [TicketManagementScreen, TheatreSummary, TicketSales]
 
 	def is_logged_in(self) -> bool:
 		return State.get("IS_ADMIN_LOGIN", False)
