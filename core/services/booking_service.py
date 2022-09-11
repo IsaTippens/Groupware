@@ -38,7 +38,7 @@ class BookingService(Service):
         return TicketView()
 
     def add(self, value: TicketView):
-        booking = self._to_model(value)
+        booking = conversions.booking_view_to_model(value)
         self.repository.add(booking)
         pass
 
@@ -50,7 +50,7 @@ class BookingService(Service):
     def register_ticket(self, ticket: TicketView):
         t_id = self.repository.get_next_id()
         ticket.id = t_id
-        self.add(conversions.booking_view_to_model(ticket))
+        self.add(ticket)
         pass
 
     def deregister_ticket(self, ticket: TicketView):
