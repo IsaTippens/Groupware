@@ -1,5 +1,5 @@
 from app.screen.titled_screen import TitledScreen
-from app.Test import Test
+from app.Select_seats import SelectSeatsScreen
 from datetime import date 
 
 from app.globals import State
@@ -26,7 +26,7 @@ class Times(TitledScreen):
             State["TICKET"].time = "7PM"
         if num == "4":
             return self.goBack()
-        return self.navigate(Test()) #should go to seating selection
+        return self.navigate(SelectSeatsScreen()) #should go to seating selection
 
        
 

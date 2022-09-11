@@ -1,7 +1,5 @@
 from app.payment import Payment
 from app.screen.titled_screen import TitledScreen
-from app.Test import Test
-from app.movies import MovieScreen
 
 from app.globals import State
 
@@ -10,8 +8,6 @@ class Snacks(TitledScreen):
         super().__init__("Snacks")
     def start(self):
         super().start()
-        print("The state is: ", State.get("test", "Empty"))
-        print()
         snacks = []
         while(True):
             print("Select snack:")

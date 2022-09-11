@@ -1,9 +1,8 @@
 from app.screen.titled_screen import TitledScreen
 from core.utils import TheatreUtils
 from app.globals import State, TheatreService
-from app.Test import Test
-from core.viewmodels import Movie, Ticket
-from core.enums import MovieType
+from app.snacks import Snacks
+from app.payment import Payment
 
 class SelectSeatsScreen(TitledScreen):
     def __init__(self):
@@ -59,7 +58,10 @@ class SelectSeatsScreen(TitledScreen):
             show_seats = True
             
         State['TICKET'].seats = selected_seats
-        return self.navigate(Test())
+        choice = input("Would you like to purchases snacks (Yes/No): ")
+        if choice.lower() == "yes":
+            return self.navigate(Snacks())
+        return self.navigate(Payment())
 
 
             

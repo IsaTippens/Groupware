@@ -1,6 +1,4 @@
 from app.screen.titled_screen import TitledScreen
-from app.Test import Test
-#from app.movies import MovieScreen
 
 from app.globals import BookingService, MovieService, State, TheatreService
 
@@ -54,7 +52,7 @@ class Payment(TitledScreen):
         response =  input("Enter 'Y' if you would like to proceed with the ticket(s) payment with the details above: ")
         if (response == "Y") or (response == "y"):
             name =  input("Kindly enter your name: ")
-            State["TICKET"].owner = name
+            Ticket.owner = name
 
 
             print("Select payment type: ")
@@ -82,6 +80,8 @@ class Payment(TitledScreen):
                 TheatreService.register_ticket(Ticket)  # expects the parameter
                 BookingService.register_ticket(Ticket)
 
+                print(f"{'-' * 10}\nReceipt\n{'-' * 10}")
+                print(Ticket,"\n")
 
                 #navigate to home page
                 return self.navigateToRoot()
@@ -111,6 +111,8 @@ class Payment(TitledScreen):
                       # 'registers the ticket'
                     TheatreService.register_ticket(Ticket)  # expects the parameter
                     BookingService.register_ticket(Ticket)
+                    print(f"{'-' * 10}\nReceipt\n{'-' * 10}")
+                    print(Ticket,"\n")
                 else:
                     print("The bank you selected does not exist. Payment Failed. Try again. ")
                     
