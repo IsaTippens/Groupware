@@ -1,5 +1,6 @@
 from app.screen.titled_screen import TitledScreen
 from app.staff.ticket_management import TicketManagementScreen
+from app.staff.ticket_sales import TicketSales
 
 from app.globals import State
 
@@ -11,7 +12,7 @@ class StaffScreen(TitledScreen):
 		"Theatre Summary",
 		"Daily sales Summary"
 		]
-		self.screens = [TicketManagementScreen()]
+		self.screens = [TicketManagementScreen, None, TicketSales]
 
 	def is_logged_in(self) -> bool:
 		return State.get("IS_ADMIN_LOGIN", False)
@@ -22,7 +23,6 @@ class StaffScreen(TitledScreen):
 		return "Signed in"
 
 	def admin_login(self) -> bool:
-		print("Admin Login")
 		passw = ""
 		while True:
 			passw = input("Enter admin code (type \"exit\" to exit): ")
@@ -75,5 +75,5 @@ class StaffScreen(TitledScreen):
 			isValid = True
 		if num == 0:
 			return self.goBack()
-		return self.navigate(self.screens[num - 1])
+		return self.navigate(self.screens[num - 1]())
 
