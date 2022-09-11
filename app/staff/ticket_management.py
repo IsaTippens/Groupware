@@ -60,7 +60,7 @@ class TicketManagementScreen(TitledScreen):
         return True
 
     def change_time(self, ticket: Ticket):
-        times = ["2PM", "5PM", "7PM"]
+        times = ["2PM", "5PM", "8PM"]
         print("Available times")
         for idx, time in enumerate(times):
             print(idx + 1, time)

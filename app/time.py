@@ -12,7 +12,7 @@ class Times(TitledScreen):
         print("Select a time:")
         print("1\t2pm")
         print("2\t5pm")
-        print("3\t7pm")
+        print("3\t8pm")
         print("4\tCancel")
         print()
 
@@ -23,7 +23,7 @@ class Times(TitledScreen):
         if num == "2":
             State["TICKET"].time = "5PM"
         if num == "3":
-            State["TICKET"].time = "7PM"
+            State["TICKET"].time = "8PM"
         if num == "4":
             return self.goBack()
         return self.navigate(SelectSeatsScreen()) #should go to seating selection
