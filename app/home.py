@@ -1,13 +1,13 @@
 from app.screen.titled_screen import TitledScreen
-from app.Test import Test
 from app.movies import MovieScreen
-from app.time import Times
+from app.staff import StaffScreen
 
 from app.globals import State
 
 class Home(TitledScreen):
     def __init__(self):
         super().__init__("Home")
+
     def start(self):
         super().start()
         
@@ -18,9 +18,15 @@ class Home(TitledScreen):
         print("2\tTicket Query")
         print("3\tStaff Page")
 
-        num = input("Enter a number: ")
-        if num == "1":
-            return self.navigate(MovieScreen())
-        if num == "2":
-            return self.navigate(Times())
+        while True:
+            num = input("Enter a number (Enter \"exit\" to exit): ")
+            if num == "1":
+                return self.navigate(MovieScreen())
+            if num == "2":
+                self.goBack()
+            if num == "3":
+                return self.navigate(StaffScreen())
+            if num == "exit":
+                return
+            print("Invalid option")
 
