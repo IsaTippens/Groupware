@@ -9,6 +9,21 @@
             "name": "Avengers 4",
             "description": "Thor returns",
             "type": 3
+        },
+        {
+            "name": "Mongoliian Horde",
+            "description": "Genghis Khan returns to colonize Gen Z",
+            "type": 1
+        },
+        {
+            "name": "Slow and Calm: Bangkok Turn",
+            "description": "Very slow cars with even slower people embark on a journey that humanity doesn't depend on",
+            "type": 2
+        },
+        {
+            "name": "The Great Escape",
+            "description": "A documentary on the former president of Afrique d'Sud and his escape from a maximum security prison",
+            "type": 3
         }
     ]
 }
