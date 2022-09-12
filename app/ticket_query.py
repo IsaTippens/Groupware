@@ -2,12 +2,6 @@ from app.screen.titled_screen import TitledScreen
 from app.Test import Test
 from app.globals import BookingService,TheatreService, MovieService
 from app.globals import State
-import json
-
-Movie_AllBookings = './data/bookings.json'
-with open(Movie_AllBookings, 'r') as f:
-    my_list = json.load(f)
-    print(my_list)
 
 class TicketQueryScreen(TitledScreen):
     def __init__(self):
